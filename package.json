@@ -25,6 +25,7 @@
     "mongoose": "^8.9.5",
     "next": "15.1.5",
     "next-auth": "^4.24.11",
+    "query-string": "^9.1.1",
     "react": "^19.0.0",
     "react-datepicker": "^7.6.0",
     "react-dom": "^19.0.0",

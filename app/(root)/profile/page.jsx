@@ -3,20 +3,42 @@ import Collection from "@/components/shared/Collection"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import {useSession} from "next-auth/react"
-
-// import { getEventsByUser } from "@/lib/actions/events.actions"
-import ProfilePage from "@/components/shared/ProfilePage"
+import { getEventsByUser } from "@/lib/actions/events.actions" 
+import { useEffect, useState } from "react"
 
 const Profile = () => {
+    //  const organizedEvents = await getEventsByUser({userId, page: 1})
 
-     const {data} = useSession()
-      
-     const userId = data?.user.id
-
-      console.log({userId})
-
-  return (
-   <>
+    const { data: session, status } = useSession()
+    const [organizedEvent, setOrganizedEvent] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
+  
+    useEffect(() => {
+      // If session is available, fetch the events
+       const fetchEvents = async () => {
+        if (session?.user?.id) {
+          try {
+            const userId = session.user.id
+            const fetchedEvents = await getEventsByUser({ userId, page: 1 })
+            setOrganizedEvent(fetchedEvents) // Assuming fetchedEvents is the list of events
+          } catch (err) {
+            console.error("Error fetching events:", err)
+            setError("Failed to load events.")
+          } finally {
+            setLoading(false)
+          }
+        }
+      }
+  
+      // Fetch events when session is available
+      if (session?.user?.id) {
+        fetchEvents()
+      }
+    }, [session])
+     
+    return (
+    <>
    <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10">
         <div className="wrapper flex items-center justify-center sm:justify-between ">
           <h3 className="h3-bold text-center sm:text-left">My Tickets</h3>
@@ -55,9 +77,8 @@ const Profile = () => {
      </section>
 
      <section className="wrapper my-8">
-      
-      {/* <Collection 
-          data={organizedEvents?.data}
+      <Collection 
+          data={organizedEvent?.data}
           emptyTitle="No event have been created yet."
           emptyStateSubtext="Go create some now."
           collectionType="Events_Organized"
@@ -65,7 +86,7 @@ const Profile = () => {
           page={1}
           urlParamName="eventsPage"
           totalPage={2}
-        /> */}
+        />
 </section>
 </>
   )
