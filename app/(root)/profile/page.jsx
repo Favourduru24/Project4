@@ -5,26 +5,41 @@ import Link from "next/link"
 import {useSession} from "next-auth/react"
 import { getEventsByUser } from "@/lib/actions/events.actions" 
 import { useEffect, useState } from "react"
+import { getOrdersByUser } from "@/lib/actions/order.actions"
 
 const Profile = () => {
-    //  const organizedEvents = await getEventsByUser({userId, page: 1})
 
     const { data: session, status } = useSession()
     const [organizedEvent, setOrganizedEvent] = useState([])
+    const [orderedEvent, setOrderedEvent] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
   
     useEffect(() => {
       // If session is available, fetch the events
-       const fetchEvents = async () => {
+      //  const fetchEvents = async () => {
+      //   if (session?.user?.id) {
+      //     try {
+      //       const userId = session.user.id
+      //       const fetchedEvents = await getEventsByUser({ userId, page: 1 })
+      //       setOrganizedEvent(fetchedEvents) // Assuming fetchedEvents is the list of events
+      //     } catch (err) {
+      //       console.error("Error fetching events:", err)
+      //       setError("Failed to load events.")
+      //     } finally {
+      //       setLoading(false)
+      //     }
+      //   }
+      // }
+      const fetchOrdersByUser = async () => {
         if (session?.user?.id) {
           try {
             const userId = session.user.id
-            const fetchedEvents = await getEventsByUser({ userId, page: 1 })
-            setOrganizedEvent(fetchedEvents) // Assuming fetchedEvents is the list of events
+            const fetchedOrders = await getOrdersByUser({ userId, page: 1 })
+            setOrderedEvent(fetchedOrders) // Assuming fetchedEvents is the list of events
           } catch (err) {
             console.error("Error fetching events:", err)
-            setError("Failed to load events.")
+            setError("Failed to load orders.")
           } finally {
             setLoading(false)
           }
@@ -33,9 +48,12 @@ const Profile = () => {
   
       // Fetch events when session is available
       if (session?.user?.id) {
-        fetchEvents()
+        // fetchEvents()
+        fetchOrdersByUser()
       }
     }, [session])
+
+    console.log({orderedEvent})
      
     return (
     <>
@@ -52,9 +70,9 @@ const Profile = () => {
      </section>
       
       <section className="wrapper my-8">
-{/*        
-            <Collection 
-                data={relatedEvents?.data}
+       
+            {/* <Collection 
+                data={orderedEvent?.data}
                 emptyTitle="No event tickets purchased yet."
                 emptyStateSubtext="No worries More event to explore!"
                 collectionType="My_Tickets"
@@ -77,7 +95,7 @@ const Profile = () => {
      </section>
 
      <section className="wrapper my-8">
-      <Collection 
+      {/* <Collection 
           data={organizedEvent?.data}
           emptyTitle="No event have been created yet."
           emptyStateSubtext="Go create some now."
@@ -86,7 +104,7 @@ const Profile = () => {
           page={1}
           urlParamName="eventsPage"
           totalPage={2}
-        />
+        /> */}
 </section>
 </>
   )

@@ -7,6 +7,8 @@ loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
 const Checkout = ({event, userId}) => {
 
+     console.log(userId)
+
        useEffect(() => {
 
          const query = new URLSearchParams(window.location.search)
@@ -22,6 +24,7 @@ const Checkout = ({event, userId}) => {
        },[])
 
     const onCheckout = async () => {
+            console.log('Checked out')
           const order = {
              eventTitle: event.title,
              eventId: event._id,
