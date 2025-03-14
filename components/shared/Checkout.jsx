@@ -7,7 +7,6 @@ loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
 const Checkout = ({event, userId}) => {
 
-     console.log(userId)
 
        useEffect(() => {
 
