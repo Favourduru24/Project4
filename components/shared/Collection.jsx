@@ -1,11 +1,12 @@
 import Card from "./Card";
+import Pagination from "./Pagination";
 
 const Collection = ({data, emptyTitle, emptyStateSubtext, page, collectionType, limit, totalPage, urlParamName}) => {
   return (
     <>
      {data?.length > 0 ? (
-           <div className="flex flex-col items-center gap-10">
-             <ul className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-col-3 xl:gap-10">
+           <div className="flex flex-col items-center gap-10 grid">
+             <ul className="gap-5 grid xl:gap-10 grid-cols-[repeat(auto-fill,minmax(305px,1fr))]">
                  {data?.map((event) => {
                          const hasOrderLink = collectionType === 'Events_Organized'
                         const hidePrice = collectionType === 'My_Tickets';
@@ -17,6 +18,7 @@ const Collection = ({data, emptyTitle, emptyStateSubtext, page, collectionType, 
                          )
                  })}
              </ul>
+              {totalPage > 1 && <Pagination urlParamName={urlParamName} page={page} totalPage={totalPage}/> }
            </div>
      ) : (
          <div className="flex-center wrapper min-h-[200px] w-full flex-col gap-3 rounded-[14px] bg-grey-50 py-28 text-center">

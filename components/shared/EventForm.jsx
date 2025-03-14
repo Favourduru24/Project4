@@ -35,7 +35,6 @@ const EventForm = ({type, event, eventId}) => {
   const form = useForm({
     resolver: zodResolver(eventFormValidator),
     defaultValues: initialValues
-    // defaultValues: eventDefaultValues
   })
  
   async function onSubmit(values) {
@@ -85,7 +84,7 @@ const EventForm = ({type, event, eventId}) => {
 
         if(updatedEvent) {
           form.reset();
-          router.push(`/events/${updatedEvent._id}`)
+          router.push(`/events/${updatedEvent?.id}`)
         }
       } catch (error) {
         console.log(error);

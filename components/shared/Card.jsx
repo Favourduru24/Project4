@@ -3,7 +3,6 @@ import { formatDateTime } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
 import { useSession } from "next-auth/react"
-// import {DeleteComfirmation} from "./DeleteComfirmation"
 import DeleteComfirmation from "./DeleteComfirmation"
 
  const Card = ({event, hasOrderLink, hidePrice}) => {

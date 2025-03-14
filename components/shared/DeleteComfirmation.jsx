@@ -17,8 +17,6 @@ import {
 } from '@/components/ui/alert-dialog'
 import { deleteEvent } from '../../lib/actions/events.actions'
 
-// import { deleteEvent } from '@/lib/actions/event.actions'
-
  const DeleteConfirmation = ({ eventId }) => {
   const pathname = usePathname()
   let [isPending, startTransition] = useTransition()
