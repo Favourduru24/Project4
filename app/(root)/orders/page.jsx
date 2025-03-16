@@ -12,7 +12,7 @@ const Orders = async ({ searchParams }) => {
   
   return (
     <>
-      <section className=" bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10">
+      <section className=" bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10 px-5 sm:px-10">
         <h3 className="wrapper h3-bold text-center sm:text-left ">Orders</h3>
       </section>
 
@@ -20,7 +20,7 @@ const Orders = async ({ searchParams }) => {
         <Search placeholder="Search buyer name..." />
       </section>
 
-      <section className="wrapper overflow-x-auto">
+      <section className="wrapper overflow-x-auto px-5 sm:px-10">
         <table className="w-full border-collapse border-t">
           <thead>
             <tr className="p-medium-14 border-b text-grey-500">

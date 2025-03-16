@@ -40,7 +40,7 @@ import CategoryFilter from "@/components/shared/CategoryFilter";
          </section>
           <section id="events" className="wrapper my-8 flex flex-col gap-8 md:gap-12 px-5 sm:px-10">
           <h2 className="h2-bold">Driving Innovation For <br/> Events Everywhere</h2>
-          <div className="flex w-full flex-col gap-5 md:flex-row px-5 sm:px-10">
+          <div className="flex w-full flex-col gap-5 md:flex-row ">
               <Search/>
               <CategoryFilter/>
                
