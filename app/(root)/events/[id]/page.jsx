@@ -17,7 +17,7 @@ import Image from "next/image"
      
   return (
     <>
-    <section className="flex justify-center bg-primary-50 bg-dotted-pattern bg-contain sm:px-10 px-5" >
+    <section className="flex justify-center bg-primary-50 bg-dotted-pattern bg-contain max-xl:px-10 px-5" >
         <div className="grid grid-col-1 md:grid-cols-2 2xl:max-w-7xl">
             
             <Image 
@@ -78,7 +78,7 @@ import Image from "next/image"
                </div>
       </section>
            
-        <section className="wrapper my-8 flex flex-col gap-8 md:gap-12 sm:px-10 px-5">
+        <section className="wrapper my-8 flex flex-col gap-8 md:gap-12 max-xl:px-10 px-5">
             <h2 className="h2-bold">Related Events</h2>
 
             <Collection 

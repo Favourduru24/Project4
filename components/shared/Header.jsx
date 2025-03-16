@@ -24,8 +24,8 @@ const Header = () => {
      },[])
 
   return (
-    <header className='w-full border-b px-5 sm:px-10 max-w-7xl lg:mx-auto p-5 md:px-10 xl:px-0 w-full'>
-      <div className='  flex items-center justify-between'>
+    <header className='w-full border-b px-5 max-xl:px-10'>
+      <div className='wrapper flex items-center justify-between'>
           <Link href="/" className='w-36'>
            <Image src="/assets/images/logo.svg" width={128} height={38} alt='event logo'/>
           </Link>

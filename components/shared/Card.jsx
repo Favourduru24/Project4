@@ -9,7 +9,6 @@ import DeleteComfirmation from "./DeleteComfirmation"
 
     const {data: userId} = useSession()
 
-      console.log({userId})
 
        const isEventCreator = userId?.user.id === event?.organizer._id.toString()
 

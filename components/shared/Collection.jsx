@@ -6,7 +6,7 @@ const Collection = ({data, emptyTitle, emptyStateSubtext, page, collectionType, 
     <>
      {data?.length > 0 ? (
            <div className="flex flex-col items-center gap-5 grid">
-             <ul className="gap-5 grid xl:gap-5 grid-cols-[repeat(auto-fill,minmax(305px,1fr))]">
+             <ul className="gap-5 grid xl:gap-5 grid-cols-[repeat(auto-fill,minmax(350px,1fr))]">
                  {data?.map((event) => {
                          const hasOrderLink = collectionType === 'Events_Organized'
                         const hidePrice = collectionType === 'My_Tickets';
