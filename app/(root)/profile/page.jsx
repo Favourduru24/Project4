@@ -62,8 +62,8 @@ const Profile = () => {
      
     return (
     <>
-   <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10 max-xl:px-10 px-5">
-        <div className="wrapper flex items-center justify-center sm:justify-between ">
+   <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10 px-5 sm:px-10 xl:px-10">
+        <div className="max-w-7xl lg:mx-auto p-5 xl:px-0 w-full flex items-center justify-center sm:justify-between ">
           <h3 className="h3-bold text-center sm:text-left">My Tickets</h3>
            <Button className="button hidden sm:flex" size="lg">
                  <Link href="/#events">
@@ -73,7 +73,7 @@ const Profile = () => {
         </div>
      </section>
       
-      <section className="wrapper my-8">
+      <section className="max-w-7xl lg:mx-auto p-5  w-full my-8 px-5 sm:px-10 xl:px-10">
        
             <Collection 
                 data={orderedEvent}
@@ -87,8 +87,8 @@ const Profile = () => {
               />
       </section>
        
-      <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10 max-xl:px-10 px-5">
-        <div className="wrapper flex items-center justify-center sm:justify-between ">
+      <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10 px-5 sm:px-10 xl:px-10">
+        <div className="max-w-7xl lg:mx-auto p-5 xl:px-0 w-full flex items-center justify-center sm:justify-between ">
           <h3 className="h3-bold text-center sm:text-left">Event Organized.</h3>
            <Button className="button hidden sm:flex" size="lg">
                  <Link href="/events/create">
@@ -98,7 +98,7 @@ const Profile = () => {
         </div>
      </section>
 
-     <section className="wrapper my-8">
+     <section className="max-w-7xl lg:mx-auto p-5 xl:px-0 w-full my-8 px-5 sm:px-10 xl:px-10">
       <Collection 
           data={organizedEvent?.data}
           emptyTitle="No event have been created yet."
