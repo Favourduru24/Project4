@@ -76,7 +76,7 @@ const Profile = ({ordersPage, eventsPage}) => {
       
       <section className="max-w-7xl lg:mx-auto p-5  w-full my-8 px-5 sm:px-10 xl:px-10">
        
-            <Collection 
+             <Collection 
                 data={orderedEvent}
                 emptyTitle="No event tickets purchased yet."
                 emptyStateSubtext="No worries More event to explore!"
