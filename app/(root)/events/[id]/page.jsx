@@ -11,7 +11,7 @@ import Image from "next/image"
       const relatedEvents = await getRelatedEventsByCategory({
          categoryId: event.category._id,
           eventId: event._id,
-          page: searchParams
+          page: searchParams.page
       })
     
      
@@ -86,9 +86,9 @@ import Image from "next/image"
                  emptyTitle="No Event Found."
                  emptyStateSubtext="Come back later."
                  collectionType="All_Events"
-                 limit={6}
-                 page={1}
-                 totalPage={2}
+                 limit={3}
+                 page={searchParams.page}
+                 totalPages={relatedEvents?.totalPages}
                />
         </section>
       </>

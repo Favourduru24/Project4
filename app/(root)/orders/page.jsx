@@ -16,7 +16,7 @@ const Orders = async ({ searchParams }) => {
         <h3 className="wrapper h3-bold text-center sm:text-left ">Orders</h3>
       </section>
 
-      <section className="max-w-7xl lg:mx-auto p-5  xl:px-0 w-full mt-8 px-5 sm:px-10 2xl:px-0">
+      <section className="max-w-7xl lg:mx-auto p-5 w-full mt-8 px-5 sm:px-10 2xl:px-0">
         <Search placeholder="Search buyer name..." />
       </section>
 

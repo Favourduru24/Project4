@@ -77,14 +77,14 @@ const EventForm = ({type, event, eventId}) => {
       try {
 
         const updatedEvent = await updateEvent({
-          event: { ...values, imageUrl: uploadedImageUrl, _id: eventId },
+          event: { ...values, imageUrl: uploadedImageUrl, _id: eventId},
           userId: userId.user.id,
           path: `/events/${eventId}`
         })
 
         if(updatedEvent) {
           form.reset();
-          router.push(`/events/${updatedEvent?.id}`)
+          router.push(`/events/${updatedEvent?._id}`)
         }
       } catch (error) {
         console.log(error);
@@ -313,7 +313,7 @@ const EventForm = ({type, event, eventId}) => {
       </div>
 
 
-      <Button 
+      {userId ? <Button 
         type="submit"
         size="lg"
         disabled={form.formState.isSubmitting}
@@ -321,7 +321,16 @@ const EventForm = ({type, event, eventId}) => {
       >
         {form.formState.isSubmitting ? (
           'Submitting...'
-        ): `${type} Event`}</Button>
+        ): `${type} Event`}
+        </Button> 
+        : 
+        <Button 
+         size="lg"
+         className="button col-span-2 w-full"
+      >
+         Login To Create Events 
+        </Button>
+        }
     </form>
   </Form>
   )

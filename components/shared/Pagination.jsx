@@ -10,7 +10,8 @@ import { Button } from "../ui/button"
     const searchParams = useSearchParams()
 
       const onClick = (btnTypes) => {
-          const pageValue = btnTypes === 'next' ? Number(page) + 1 : Number(page) - 1 
+
+      const pageValue = btnTypes === 'next' ? Number(page) + 1 : Number(page) - 1 
           
           const newUrl = formUrlQuery({
             params: searchParams.toString(),

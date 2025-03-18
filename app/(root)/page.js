@@ -21,7 +21,6 @@ import CategoryFilter from "@/components/shared/CategoryFilter";
             limit: 6
          })
           
-         console.log(event)
      return (
         <>
          <section className="bg-primary-50 bg-dotted-pattern bg-contain py-5 md:py-10 px-5 sm:px-10 xl:px-10">
@@ -52,7 +51,7 @@ import CategoryFilter from "@/components/shared/CategoryFilter";
                   collectionType="All_Events"
                   limit={6}
                   page={page}
-                  totalPage={event?.totalPages}
+                  totalPages={event?.totalPages}
                />
           </section>
         </>
