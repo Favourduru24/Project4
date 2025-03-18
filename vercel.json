@@ -3,6 +3,10 @@
       {
         "source": "/events/create",
         "destination": "/api/events/create"
+      },
+      {
+        "source": "/api/:path*",
+        "destination": "/api/:path*"
       }
     ]
   }
