@@ -22,6 +22,7 @@ import { startTransition, useEffect, useState } from "react"
 import { Input } from "../ui/input"
 import { createCategory, getAllCategory } from "@/lib/actions/category.actions"
 
+export const dynamic = "force-dynamic";
 
 const Dropdown = ({value, onChangeHandler}) => {
 

@@ -2,10 +2,10 @@
     "rewrites": [
       {
         "source": "/events/create",
-        "destination": "/app/events/create"
+        "destination": "/app/root/events/create"
       },
       {
-        "source": "/app/:path*",
+        "source": "/events/create",
         "destination": "/api/:path*"
       }
     ]

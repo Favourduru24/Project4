@@ -1,6 +1,8 @@
 
 import EventForm from '@/components/shared/EventForm'
 
+export const dynamic = "force-dynamic";
+
 const CreateEvent =  () => {
 
   return (
