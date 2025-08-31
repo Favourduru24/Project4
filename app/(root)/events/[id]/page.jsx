@@ -81,7 +81,7 @@ import Image from "next/image"
         <section className="wrapper my-8 flex flex-col gap-8 md:gap-12 sm:px-10 px-5">
             <h2 className="h2-bold">Related Events</h2>
 
-            <Collection 
+             <Collection 
                  data={relatedEvents?.data}
                  emptyTitle="No Event Found."
                  emptyStateSubtext="Come back later."

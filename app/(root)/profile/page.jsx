@@ -5,7 +5,6 @@ export default function ProfilePage({ searchParams }) {
   const ordersPage = Number(searchParams?.ordersPage) || 1;
   const eventsPage = Number(searchParams?.eventsPage) || 1;
 
-  console.log(ordersPage)
 
   // Pass the parameters to a client component
   return (

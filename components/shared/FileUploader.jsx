@@ -8,9 +8,10 @@ import { convertFileToUrl } from '@/lib/utils'
  
 
 export function FileUploader({ imageUrl, onFieldChange, setFiles }) {
+
   const onDrop = useCallback((acceptedFiles) => {
-    setFiles(acceptedFiles)
-    onFieldChange(convertFileToUrl(acceptedFiles[0]))
+     setFiles(acceptedFiles)
+     onFieldChange(convertFileToUrl(acceptedFiles[0]))
   }, [])
 
   const { getRootProps, getInputProps } = useDropzone({

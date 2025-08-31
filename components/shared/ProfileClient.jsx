@@ -42,7 +42,7 @@ const Profile = ({ordersPage, eventsPage}) => {
             console.log({fetchedOrders})
              
              const orders = fetchedOrders.data.map((fetch) => fetch.event) || []
-            setOrderedEvent(orders) // Assuming fetchedEvents is the list of events
+             setOrderedEvent(orders) // Assuming fetchedEvents is the list of events
           } catch (err) {
             console.error("Error fetching events:", err)
             setError("Failed to load orders.")
@@ -111,7 +111,7 @@ const Profile = ({ordersPage, eventsPage}) => {
           totalPages={organizedEvent?.totalPages}
         />
 
-</section>
+ </section>
 </>
   )
 }
