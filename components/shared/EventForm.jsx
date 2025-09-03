@@ -60,7 +60,7 @@ const EventForm = ({type, event, eventId}) => {
 
         if(newEvent) {
           form.reset();
-          router.push(`/events/${newEvent.id}`)
+          router.push(`/events/${newEvent?._id}`)
         }
       } catch (error) {
         console.log(error);
