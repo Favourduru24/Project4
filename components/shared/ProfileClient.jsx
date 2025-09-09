@@ -17,7 +17,7 @@ const Profile = ({ordersPage, eventsPage}) => {
 
   
     useEffect(() => {
-      // If session is available, fetch the events
+      // If session is available, fetch the events 
        const fetchEvents = async () => {
         if (session?.user?.id) {
           try {
