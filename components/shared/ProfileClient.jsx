@@ -39,10 +39,8 @@ const Profile = ({ordersPage, eventsPage}) => {
             const userId = session.user.id
             const fetchedOrders = await getOrdersByUser({ userId, page: ordersPage })
              
-            console.log({fetchedOrders})
-             
              const orders = fetchedOrders.data.map((fetch) => fetch.event) || []
-             setOrderedEvent(orders) // Assuming fetchedEvents is the list of events
+             setOrderedEvent(orders) 
           } catch (err) {
             console.error("Error fetching events:", err)
             setError("Failed to load orders.")
