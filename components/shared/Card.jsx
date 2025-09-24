@@ -10,7 +10,7 @@ import DeleteComfirmation from "./DeleteComfirmation"
     const {data: userId} = useSession()
 
 
-       const isEventCreator = userId?.user.id === event?.organizer?._id.toString()
+       const isEventCreator = userId?.user?.id === event?.organizer?._id.toString()
 
         
 
@@ -45,7 +45,7 @@ import DeleteComfirmation from "./DeleteComfirmation"
           </div>
             }  
 
-            <p className="p-medium-16 p-medium-18 text-grey-500">{formatDateTime(event?.startDateTime).dateTime}</p>
+            <p className="p-medium-16 p-medium-18 text-grey-500">{formatDateTime(event?.startDateTime)?.dateTime}</p>
              <Link 
              href={`/events/${event?._id}`} 
              >
